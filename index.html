@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #menu{
+        margin: auto;
+    }
+    .main{
+        background-color: rgb(240, 186, 105);
+        color: white;
+        font-family: 微軟正黑體;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        height: 35px;
+        width: 100px;
+        }
+    .sub{
+        background-color: rgb(240, 186, 105);
+        color: white;
+        font-family: 微軟正黑體;
+        text-align: center;
+        font-weight: bold;
+        width: 100px;
+    }
+    .sub li{
+        list-style-type: none;
+        line-height: 25px;
+    }
+    .item{
+        float: left;
+    }
+</style>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FJU EAT MAP - 文園</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+       $(document).ready(function(){
+            $(".sub").slideUp(0)
+            for(i = 0;i<$(".main").length;++i){
+                $(".main:eq("+i+")").click({id:i},function(e){
+                    n=e.data.id
+                    $(".sub:eq("+n+")").slideToggle();
+                    $(".sub:not(:eq("+n+"))").slideUp();
+                })
+            }
+            $("#menu").css("width",$(".main").length*100)
+       })
+    </script>
+</head>
+
+<body> 
+    <div id="menu">
+        <div class="item">
+            <div class="main">輔園</div>
+            <div class="sub">
+                <ul>
+                    <li>八方雲集</li>
+                    <li>新纖戀果</li>
+                    <li>食福簡餐</li>
+                    <li>雲瀚哨子麵</li>
+                    <li>新東家滷味</li>
+                    <li>新羅韓式料理</li>
+                    <li>廚師豬排</li>
+                    <li>茶壜</l>
+                    <li>社企</l>
+                    <li>麵包店</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">理園</div>
+            <div class="sub">
+                <ul>
+                    <li>辛蔬</li>
+                    <li>饗敘</li>
+                    <li>日晞小吃店</li>
+                    <li>楓炊炒丼</li>
+                    <li>三顧茅廬</li>
+                    <li>熊賀炒飯</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">仁園</div>
+            <div class="sub">
+                <UL>
+                    <li>自助餐</li>
+                    <li>麵食部</li>
+                </UL>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">心園</div>
+            <div class="sub">
+                <ul>
+                    <li>自助餐</li>
+                    <li>麵食部</l>
+                    <li>水果果汁</li>
+                    <li>巧瑋鬆餅屋</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">文園</div>
+            <div class="sub">
+                <ul>
+                    <li>阿關小吃店</li>
+                    <li>娃子複合式餐飲</li>
+                    <li>趙班長海苔飯捲</li>
+                    <li>COMEBUY</li>
+                    <li>吉立自助餐</li>
+                    <li>阿諾手感烘培</li>
+                    <li>MO&MO滷味</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="main">聖園</div>
+            <div class="sub">
+                <ul>
+                    <li>想點</li>
+                    <li>自由雞飯</li>
+                    <li>赤井咖哩會社</li>
+                    <li>7-11販賣機</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
