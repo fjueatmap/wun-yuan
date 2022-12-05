@@ -3,14 +3,29 @@
     *{
         margin: 0;
         padding: 0;
+        background-color: rgb(240, 186, 105);
+    }
+    
+    @import url('http://nonty.net/font/setofont/​');
+    #word{
+        margin: 1%;
+        font-size: 40px;
+        color: gray;
+        display: flex;
+        font-family: setofont;
+        justify-content: center;
     }
     #menu{
         margin: auto;
     }
+    img{
+        height: auto;
+        max-width: 100%;
+    }
     .main{
         background-color: rgb(240, 186, 105);
         color: white;
-        font-family: 微軟正黑體;
+        font-family: setofont;
         font-weight: bold;
         font-size: 20px;
         cursor: pointer;
@@ -19,27 +34,54 @@
         width: 100px;
         }
     .sub{
+		position: absolute;
+        display: flex;
+        flex-direction: column;
         background-color: rgb(240, 186, 105);
         color: white;
-        font-family: 微軟正黑體;
+        font-family: setofont;
         text-align: center;
         font-weight: bold;
         width: 100px;
     }
     .sub li{
+		border-color: gray;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 3%;
         list-style-type: none;
         line-height: 25px;
     }
     .item{
         float: left;
     }
+    .text{
+        margin: 1%;
+        font-size: 25px;
+    }
+    .border{
+        border-color: gray;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 1%;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+    .set{
+        margin: 1%;
+        display: flex;
+        justify-content: center;
+    }
 </style>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>文園</title>
+    <title>FJU EAT MAP</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="jquery.rwdImageMaps.js"></script>
     <script>
        $(document).ready(function(){
             $(".sub").slideUp(0)
@@ -47,25 +89,23 @@
                 $(".main:eq("+i+")").click({id:i},function(e){
                     n=e.data.id
                     $(".sub:eq("+n+")").slideToggle();
-                    $(".sub:not(:eq("+n+"))").slideUp();
+                    $(".sub:not(:eq(" + n + "))").slideUp();
                 })
             }
             $("#menu").css("width",$(".main").length*100)
+            $('img[usemap]').rwdImageMaps();
        })
     </script>
 </head>
 
 <body> 
-    <div id="menu">
+    <div id="word">
+        <a href="https://fjueatmap.github.io/" style="color:gray;">輔仁學餐</a>
+    </div>
+    <div id="menu" style="width: 600px;height: 35px;">
         <div class="item">
             <div class="main">
-                <a href="https://fjueatmap.github.io/" style="color:white;">首頁</a>
-            </div>
-            <div class="sub"></div>
-        </div>
-        <div class="item">
-            <div class="main">
-                <a href="https://fjueatmap.github.io/fu-yuan/" style="color:white;">輔園</a>
+                <a style="color:white;">輔園</a>
             </div>
             <div class="sub">
                 <ul>
@@ -76,21 +116,21 @@
                     <li>新東家滷味</li>
                     <li>新羅韓式料理</li>
                     <li>廚師豬排</li>
-                    <li>茶壜</l>
-                    <li>社企</l>
+                    <li>茶壜</li>
+                    <li>社企</li>
                     <li>麵包店</li>
                 </ul>
             </div>
         </div>
         <div class="item">
             <div class="main">
-                <a href="https://fjueatmap.github.io/li-yuan/" style="color:white;">理園</a>
+                <a style="color:white;">理園</a>
             </div>
             <div class="sub">
                 <ul>
                     <li>辛蔬</li>
                     <li>饗敘</li>
-                    <li>日晞小吃店</li>
+                    <li>阿珠媽</li>
                     <li>楓炊炒丼</li>
                     <li>三顧茅廬</li>
                     <li>熊賀炒飯</li>
@@ -99,7 +139,7 @@
         </div>
         <div class="item">
             <div class="main">
-                <a href="https://fjueatmap.github.io/ren-yuan/" style="color:white;">仁園</a>
+                <a style="color:white;">仁園</a>
             </div>
             <div class="sub">
                 <UL>
@@ -110,7 +150,7 @@
         </div>
         <div class="item">
             <div class="main">
-                <a href="https://fjueatmap.github.io/sin-yuan/" style="color:white;">心園</a>    
+                <a style="color:white;">心園</a>    
             </div>
             <div class="sub">
                 <ul>
@@ -123,7 +163,7 @@
         </div>
         <div class="item">
             <div class="main">
-                <a href="https://fjueatmap.github.io/wun-yuan/" style="color:white;">文園</a>
+                <a style="color:white;">文園</a>
             </div>
             <div class="sub">
                 <ul>
@@ -139,7 +179,7 @@
         </div>
         <div class="item">
             <div class="main">
-                <a href="https://fjueatmap.github.io/sheng-yuan/" style="color:white;">聖園</a>
+                <a style="color:white;">聖園</a>
             </div>
             <div class="sub">
                 <ul>
@@ -149,6 +189,41 @@
                     <li>7-11販賣機</li>
                 </ul>
             </div>
+        </div>
+    </div>
+    <div id="阿關小吃店" class="set" style="width:100%;">
+        <div class="border" style="width: 70%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 80px;">阿關小吃店</div>
+        </div>
+    </div>
+    <div id="娃子複合式餐飲" class="set" style="width:100%;">
+        <div class="border" style="width: 70%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 80px;">娃子複合式餐飲</div>
+        </div>
+    </div>
+    <div id="趙班長海苔飯捲" class="set" style="width:100%;">
+        <div class="border" style="width: 70%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 80px;">趙班長海苔飯捲</div>
+        </div>
+    </div>
+    <div id="COMEBUY" class="set" style="width:100%;">
+        <div class="border" style="width: 70%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 80px;">COMEBUY</div>
+        </div>
+    </div>
+    <div id="吉立自助餐" class="set" style="width:100%;">
+        <div class="border" style="width: 70%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 80px;">吉立自助餐</div>
+        </div>
+    </div>
+    <div id="阿諾手感烘培" class="set" style="width:100%;">
+        <div class="border" style="width: 70%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 80px;">阿諾手感烘培</div>
+        </div>
+    </div>
+    <div id="MO&MO滷味" class="set" style="width:100%;">
+        <div class="border" style="width: 70%;height: 110px;">
+            <div class="text" style=" width: 80px;;height: 80px;">MO&MO滷味</div>
         </div>
     </div>
 </body>
