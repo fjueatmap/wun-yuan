@@ -81,6 +81,53 @@
         display: flex;
         justify-content: center;
     }
+    .mo{
+        background-color: rgb(240, 186, 105);
+        color: white;
+        font-family: setofont;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        height: 35px;
+        margin-top: 40px;
+        margin-right:3px;
+        margin: 1%;
+    }
+    .imgp{
+        background-color: rgb(240, 186, 105);
+        color: white;
+        font-family: setofont;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        height: 35px;
+        margin-top: 40px;
+        margin-right:3px;
+        margin: 1%;
+    }
+    .m1{
+        border-color: gray;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 1%;
+        width: 40%;
+        position: absolute;
+        text-align: center;
+        color: white;
+        font-family: setofont;
+    }
+    .m1 li{
+        float: left;
+        margin-right:25px;
+        list-style-type: none;
+        font-size: 25px;
+    }
+    .imgb{
+        display: flex;
+        justify-content: center;
+    }
 </style>
 <html>
 
@@ -93,11 +140,27 @@
     <script>
        $(document).ready(function(){
             $(".sub").slideUp(0)
+            $(".sub2").slideUp(0)
+            $(".imgb").slideUp(0)
             for(i = 0;i<$(".main").length;++i){
                 $(".main:eq("+i+")").click({id:i},function(e){
                     n=e.data.id
                     $(".sub:eq("+n+")").slideToggle();
                     $(".sub:not(:eq(" + n + "))").slideUp();
+                })
+            }
+            for(i = 0;i<$(".mo").length;++i){
+                $(".mo:eq("+i+")").click({id:i},function(e){
+                    n=e.data.id
+                    $(".sub2:eq("+n+")").slideToggle();
+                    $(".sub2:not(:eq(" + n + "))").slideUp();
+                })
+            }
+            for(i = 0;i<$(".imgp").length;++i){
+                $(".imgp:eq("+i+")").click({id:i},function(e){
+                    n=e.data.id
+                    $(".imgb:eq("+n+")").slideToggle();
+                    $(".imgb:not(:eq(" + n + "))").slideUp();
                 })
             }
             $("#menu").css("width",$(".main").length*100)
@@ -201,55 +264,248 @@
     </div>
     <div id="阿關小吃店" class="set" style="width:100%;">
         <div class="border" style="width: 70%;height: 110px;">
-            <div class="text" style=" width: 80px;;height: 80px;">阿關小吃店</div>
-		<img class="img" src="47.jpg">
+            <div class="text" style=" width: 100px;;height: 80px;">阿關小吃店</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="imgp">
+                <a style="color:white;">圖片</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>咖哩飯  65元</li>
+                    <li>咖哩豬排飯  110元</li>
+                    <li>豬肉蓋飯/蓋烏龍麵  90元</li>
+                    <li>菇菇蓋飯/蓋烏龍麵  90元</li>
+                    <li>雞肉蓋飯/蓋烏龍麵  90元</li>
+                    <li>牛肉蓋飯/蓋烏龍麵  100元</li>
+                    <li>豬排蓋飯/蓋烏龍麵  110元</li>
+                    <li>昆布湯烏龍麵  90元</li>
+                    <li>昆布湯雞絲麵  90元</li>
+                    <li>昆布湯意麵  90元</li>
+                    <li>昆布湯泡飯  90元</li>
+                    <li>泡菜烏龍麵  110元</li>
+                    <li>泡菜雞絲麵  110元</li>
+                    <li>泡菜意麵  110元</li>
+                    <li>泡菜泡飯  110元</li>
+                </ul>  
+            </div>
         </div>
+    </div>
+    <div style="width:100%;" class="imgb" style="height:0% ;width: 0%;">
+        <img class="img" src="47.jpg" style="height:30% ;width: 30%;">
     </div>
     <div id="娃子複合式餐飲" class="set" style="width:100%;">
         <div class="border" style="width: 70%;height: 110px;">
-            <div class="text" style=" width: 80px;;height: 80px;">娃子複合式餐飲</div>
-		<img class="img" src="32.jpg">
-		<img class="img" src="34.jpg">
-		<p style=font-size:smaller:>早餐及午餐的好選擇</p>
+            <div class="text" style=" width: 100px;;height: 80px;">娃子複合式餐飲</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="imgp">
+                <a style="color:white;">圖片</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>漢堡蛋  40元</li>
+                    <li>火腿蛋堡  40元</li>
+                    <li>培根蛋堡  40元</li>
+                    <li>香雞蛋堡  40元</li>
+                    <li>燻雞蛋堡  45元</li>
+                    <li>薯餅蛋堡  45元</li>
+                    <li>豬排蛋堡  45元</li>
+                    <li>鮪魚蛋堡  45元</li>
+                    <li>魚排蛋堡  45元</li>
+                    <li>里雞蛋堡  45元</li>
+                    <li>卡拉雞腿堡  55元</li>
+                    <li>起司蛋吐司  30元</li>
+                    <li>肉鬆蛋吐司  30元</li>
+                    <li>生菜蛋吐司  30元</li>
+                    <li>玉米蛋吐司  35元</li>
+                    <li>火腿蛋吐司  35元</li>
+                    <li>培根蛋吐司  35元</li>
+                    <li>鮪魚蛋吐司  40元</li>
+                    <li>里雞蛋吐司  40元</li>
+                    <li>薯餅蛋吐司  40元</li>
+                    <li>豬排蛋吐司  40元</li>
+                    <li>烤總匯  60元</li>
+                    <li>原味蛋餅  25元</li>
+                    <li>起司蛋餅  30元</li>
+                    <li>肉鬆蛋餅  30元</li>
+                    <li>火腿蛋餅  35元</li>
+                    <li>培根蛋餅  35元</li>
+                    <li>玉米蛋餅  35元</li>
+                    <li>高麗菜蛋餅  35元</li>
+                    <li>鮪魚蛋餅  40元</li>
+                    <li>燻雞蛋餅  40元</li>
+                    <li>豬排蛋餅  40元</li>
+                    <li>薯餅蛋餅  40元</li>
+                    <li>巧克力吐司/厚片  20/25元</li>
+                    <li>花生吐司/厚片  20/25元</li>
+                    <li>香蒜吐司/厚片  20/25元</li>
+                    <li>奶油吐司/厚片  20/25元</li>
+                    <li>椰香吐司/厚片  20/25元</li>
+                    <li>草莓吐司/厚片  20/25元</li>
+                    <li>火腿起司可頌  45元</li>
+                    <li>培根起司可頌  45元</li>
+                    <li>鮪魚可頌  45元</li>
+                    <li>豬排可頌  45元</li>
+                    <li>蘿蔔糕  30元</li>
+                    <li>麥克雞塊  35元</li>
+                    <li>薯餅  35元</li>
+                    <li>薯條  35元</li>
+                    <li>熱狗蛋  35元</li>
+                    <li>卡拉雞腿塊  40元</li>
+                    <li>紅茶  20元</li>
+                    <li>奶茶  20元</li>
+                    <li>豆漿  20元</li>
+                    <li>薏仁漿  20元</li>
+                    <li>柳橙汁  25元</li>
+                    <li>可可  35元</li>
+                    <li>咖啡  30元</li>
+                    <li>鮮奶紅茶  40元</li>
+                </ul>  
+            </div>
+		    <p style=font-size:smaller:>早餐及午餐的好選擇</p>
         </div>
+    </div>
+    <div style="width:100%;" class="imgb" style="height:0% ;width: 0%;">
+        <img class="img" src="32.jpg" style="height:30% ;width: 30%;">
+        <img class="img" src="34.jpg" style="height:30% ;width: 30%;">
     </div>
     <div id="趙班長海苔飯捲" class="set" style="width:100%;">
         <div class="border" style="width: 70%;height: 110px;">
-            <div class="text" style=" width: 80px;;height: 80px;">趙班長海苔飯捲</div>
-		<img class="img" src="45.jpg">
-		<img class="img" src="44.jpg">
-		<p style=font-size:smaller:>價格相對較低，且花費在排隊時間上較少。</p>
+            <div class="text" style=" width: 100px;;height: 80px;">趙班長海苔飯捲</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="imgp">
+                <a style="color:white;">圖片</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>原味抓餅  30元</li>
+                    <li>抓餅蛋  40元</li>
+                    <li>抓餅玉米蛋  50元</li>
+                    <li>抓餅九層塔蛋  50元</li>
+                    <li>抓餅肉鬆蛋  50元</li>
+                    <li>抓餅起司蛋  50元</li>
+                    <li>抓餅火腿蛋  55元</li>
+                    <li>抓餅培根蛋  55元</li>
+                    <li>抓餅鮪魚蛋  55元</li>
+                    <li>抓餅泡菜蛋  60元</li>
+                    <li>抓餅薯餅蛋  60元</li>
+                    <li>抓餅卡拉蛋  60元</li>
+                    <li>抓餅燒肉蛋  60元</li>
+                    <li>熱狗  25元</li>
+                    <li>百頁豆腐  30元</li>
+                    <li>花枝丸  30元</li>
+                    <li>甜不辣  30元</li>
+                    <li>炸水餃  35元</li>
+                    <li>詐飯糰  35元</li>
+                    <li>蘿蔔糕  35元</li>
+                    <li>銀絲卷+煉乳  35元</li>
+                    <li>甘梅地瓜  35元</li>
+                    <li>炸湯圓  35元</li>
+                    <li>薯條  35元</li>
+                    <li>麥克雞塊  35元</li>
+                    <li>洋蔥圈  35元</li>
+                    <li>薯餅  35元</li>
+                    <li>杏鮑菇  35元</li>
+                    <li>青蔥龍捲餅  40元</li>
+                    <li>紅豆龍捲餅  40元</li>
+                    <li>雞米花  50元</li>
+                    <li>鹹酥雞  50元</li>
+                    <li>香香雞  50元</li>
+                    <li>魷米花  55元</li>
+                    <li>肉鬆沙拉飯捲  55元</li>
+                    <li>起士蔬果飯捲  65元</li>
+                    <li>日式燒肉飯捲  65元</li>
+                    <li>檸檬雞柳飯捲  65元</li>
+                    <li>雞米花飯捲  65元</li>
+                    <li>香香雞飯捲  65元</li>
+                    <li>泰式蝦排飯捲  65元</li>
+                    <li>起士鮪魚飯捲  65元</li>
+                    <li>熱狗薯條飯捲  65元</li>
+                    <li>日式炸豬排飯捲  65元</li>
+                    <li>卡拉雞腿飯捲  70元</li>
+                    <li>泡菜燒肉飯捲  70元</li>
+                    <li>味噌湯  25元</li>
+                    <li>味噌貢丸湯  35元</li>
+                </ul>  
+            </div>
+		    <p style=font-size:smaller:>價格相對較低，且花費在排隊時間上較少。</p>
         </div>
+    </div>
+    <div style="width:100%;" class="imgb" style="height:0% ;width: 0%;">
+        <img class="img" src="45.jpg" style="height:30% ;width: 30%;">
+        <img class="img" src="44.jpg" style="height:30% ;width: 30%;">
     </div>
     <div id="COMEBUY" class="set" style="width:100%;">
         <div class="border" style="width: 70%;height: 110px;">
-            <div class="text" style=" width: 80px;;height: 80px;">COMEBUY</div>
-		<img class="img" src="40.jpg">
-		<img class="img" src="41.jpg">
-		<p style=font-size:smaller:>連鎖飲料店，進門即可聞到從店內傳來的誘人香味。</p>
+            <div class="text" style=" width: 100px;;height: 80px;">COMEBUY</div>
+            <div class="imgp">
+                <a style="color:white;">圖片</a>
+            </div>
+		    <p style=font-size:smaller:>連鎖飲料店，進門即可聞到從店內傳來的誘人香味。</p>
         </div>
+    </div>
+    <div style="width:100%;" class="imgb" style="height:0% ;width: 0%;">
+        <img class="img" src="40.jpg" style="height:30% ;width: 30%;">
+        <img class="img" src="41.jpg" style="height:30% ;width: 30%;">
     </div>
     <div id="吉立自助餐" class="set" style="width:100%;">
         <div class="border" style="width: 70%;height: 110px;">
-            <div class="text" style=" width: 80px;;height: 80px;">吉立自助餐</div>
-		<img class="img" src="36.jpg">
-		<img class="img" src="37.jpg">
+            <div class="text" style=" width: 100px;;height: 80px;">吉立自助餐</div>
+            <div class="mo" >
+                <a style="color:white;">菜單</a>
+            </div>
+            <div class="imgp">
+                <a style="color:white;">圖片</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>100g  21元</li>
+                </ul>  
+            </div>
         </div>
+    </div>
+    <div style="width:100%;" class="imgb" style="height:0% ;width: 0%;">
+        <img class="img" src="36.jpg" style="height:30% ;width: 30%;">
+        <img class="img" src="37.jpg" style="height:30% ;width: 30%;">
     </div>
     <div id="阿諾手感烘培" class="set" style="width:100%;">
         <div class="border" style="width: 70%;height: 110px;">
-            <div class="text" style=" width: 80px;;height: 80px;">阿諾手感烘培</div>
-		<img class="img" src="31.jpg">
-		<img class="img" src="42.jpg">
+            <div class="text" style=" width: 100px;;height: 80px;">阿諾手感烘培</div>
+            <div class="imgp">
+                <a style="color:white;">圖片</a>
+            </div>
 		<p style=font-size:smaller:>售有各式麵包及蛋糕，還有綠豆冰沙。</p>
         </div>
     </div>
+    <div style="width:100%;" class="imgb" style="height:0% ;width: 0%;">
+        <img class="img" src="31.jpg" style="height:30% ;width: 30%;">
+        <img class="img" src="42.jpg" style="height:30% ;width: 30%;">
+    </div>
     <div id="MO&MO滷味" class="set" style="width:100%;">
         <div class="border" style="width: 70%;height: 110px;">
-            <div style="margin: 1%;font-size: 25px; width: 80px;;height: 80px;">MO&MO滷味</div>
-		<img class="img" src="39.jpg">
-		<p style=font-size:smaller:>原本位於理園三顧茅廬的位子，於111學年度遷至此處，蠻受學生歡迎</p>
+            <div class="text" style="width: 100px;;height: 80px;">MO&MO滷味</div>
+            <div class="mo" >
+                <a style="color:white;">菜單(套餐)</a>
+            </div>
+            <div class="imgp">
+                <a style="color:white;">圖片</a>
+            </div>
+            <div class="sub2">
+                <ul class="m1">
+                    <li>王子餐  70元</li>
+                    <li>姑姑餐  50元</li>
+                </ul>  
+            </div>
+		    <p style=font-size:smaller:>原本位於理園三顧茅廬的位子，於111學年度遷至此處，蠻受學生歡迎</p>
         </div>
+    </div>
+    <div style="width:100%;" class="imgb" style="height:0% ;width: 0%;">
+        <img class="img" src="39.jpg" style="height:30% ;width: 30%;">
     </div>
 </body>
 
